@@ -1,13 +1,11 @@
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
 
 public class Main {
     public Main() {
     }
 
     public static void main(String[] var0) {
-        BlockingQueue<Integer> buffer = new ArrayBlockingQueue<>(5);
+        RingBuffer<Integer> buffer = new RingBuffer<>(5);
         Thread producer = new Thread(() -> {
             try {
                 for(int i = 1; i <= 10; i++) {
